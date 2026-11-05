@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biashara Kiganjani - Smart Business Management App for SMEs</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0B3C5D',
+                            darkBlue: '#002845',
+                            lightBlue: '#E8F1F5',
+                            accent: '#10B981',
+                            accentHover: '#059669',
+                            gold: '#F59E0B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .phone-mockup-shadow {
+            box-shadow: 0 25px 50px -12px rgba(11, 60, 93, 0.35);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-brand-darkBlue/95 backdrop-blur-md border-b border-slate-700/50 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-brand-accent flex items-center justify-center font-bold text-white text-xl shadow-lg shadow-emerald-500/20">
+                    <i data-lucide="smartphone"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-xl tracking-tight text-white block leading-none">Biashara Kiganjani</span>
+                    <span class="text-xs text-emerald-400 font-medium">By Team Horizon • UDICTI</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-6 font-medium text-sm text-slate-300">
+                <a href="#problem-solution" class="hover:text-emerald-400 transition-colors">Problem & Solution</a>
+                <a href="#features" class="hover:text-emerald-400 transition-colors">Features</a>
+                <a href="#preview" class="hover:text-emerald-400 transition-colors">Live App Demo</a>
+                <a href="#interactive-tax" class="hover:text-emerald-400 transition-colors">Tax Calculator</a>
+                <a href="#team-horizon" class="hover:text-emerald-400 transition-colors">Team Horizon</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-3">
+                <button onclick="openQrModal()" class="hidden sm:flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 px-4 py-2.5 rounded-xl border border-slate-700 text-sm font-semibold transition-all">
+                    <i data-lucide="qr-code" class="w-4 h-4 text-emerald-400"></i>
+                    Scan QR
+                </button>
+                <a href="#download" class="flex items-center gap-2 bg-brand-accent hover:bg-brand-accentHover text-white px-5 py-2.5 rounded-xl font-semibold text-sm shadow-md shadow-emerald-600/30 transition-all hover:scale-[1.02]">
+                    <i data-lucide="download" class="w-4 h-4"></i>
+                    Download APK
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-brand-darkBlue via-brand-blue to-slate-900 text-white pt-12 pb-24 lg:pt-20 lg:pb-32">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#10B981_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-medium">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Built by Team Horizon • UDICTI Innovation Hub (CoICT)
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                        Biashara Kiganjani: <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Business Management in the Palm of Your Hand.</span>
+                    </h1>
+                    
+                    <p class="text-slate-300 text-lg sm:text-xl max-w-2xl font-normal leading-relaxed mx-auto lg:mx-0">
+                        Helping Tanzanian SMEs move from slow, error-prone paper notebooks to a smart mobile app with instant cloud sync, debt tracking, stock management, and ESMA AI financial advice.
+                    </p>
+
+                    <!-- Target SMEs Badge Strip -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs font-semibold text-slate-300 pt-2">
+                        <span class="text-slate-400 font-normal">Designed for:</span>
+                        <span class="bg-slate-800/80 border border-slate-700 px-3 py-1 rounded-lg">🛒 Dukas & Kiosks</span>
+                        <span class="bg-slate-800/80 border border-slate-700 px-3 py-1 rounded-lg">💇 Salons</span>
+                        <span class="bg-slate-800/80 border border-slate-700 px-3 py-1 rounded-lg">🍲 Eateries</span>
+                        <span class="bg-slate-800/80 border border-slate-700 px-3 py-1 rounded-lg">🌱 Agrovets</span>
+                        <span class="bg-slate-800/80 border border-slate-700 px-3 py-1 rounded-lg">💊 Pharmacies</span>
+                    </div>
+
+                    <!-- CTA Group -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#download" class="w-full sm:w-auto flex items-center justify-center gap-3 bg-brand-accent hover:bg-brand-accentHover text-white px-8 py-4 rounded-xl font-bold text-base shadow-xl shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5">
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                            Download Free Android APK
+                        </a>
+                        <button onclick="openQrModal()" class="w-full sm:w-auto flex items-center justify-center gap-3 bg-slate-800/80 hover:bg-slate-700/90 text-white border border-slate-600 px-6 py-4 rounded-xl font-semibold text-base backdrop-blur-md transition-all">
+                            <i data-lucide="qr-code" class="w-5 h-5 text-emerald-400"></i>
+                            Scan QR Code
+                        </button>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="pt-8 border-t border-slate-700/60 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400">15+ SMEs</div>
+                            <div class="text-xs sm:text-sm text-slate-400 font-medium font-sans">Field Interviewed</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400">ESMA AI</div>
+                            <div class="text-xs sm:text-sm text-slate-400 font-medium font-sans">Gemini Advisor</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-amber-400">100%</div>
+                            <div class="text-xs sm:text-sm text-slate-400 font-medium font-sans">Data Backup Safety</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Single Smartphone Interactive Mockup -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-[320px] sm:max-w-[340px]">
+                        <!-- Glow behind device -->
+                        <div class="absolute -inset-4 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-[45px] blur-2xl opacity-30"></div>
+                        
+                        <!-- Phone Frame -->
+                        <div class="relative bg-slate-900 border-4 border-slate-700 rounded-[40px] p-3 shadow-2xl phone-mockup-shadow">
+                            <!-- Speaker/Camera Notch -->
+                            <div class="w-28 h-4 bg-slate-800 rounded-full mx-auto mb-2 flex items-center justify-center z-10 relative">
+                                <div class="w-10 h-1 bg-slate-700 rounded-full"></div>
+                            </div>
+                            
+                            <!-- Phone Screen Area -->
+                            <div class="relative bg-slate-950 rounded-[28px] overflow-hidden border border-slate-800 h-[560px] flex flex-col justify-between">
+                                
+                                <!-- Screenshots Viewport -->
+                                <div class="relative flex-1 bg-slate-900 overflow-hidden">
+                                    <!-- 1. Home (Dashboard) -->
+                                    <div id="phone-screen-home" class="phone-screen absolute inset-0 transition-opacity duration-300 opacity-100 z-10">
+                                        <img src="dashboard.png" alt="Home Dashboard" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/340x520/0B3C5D/ffffff?text=Home+Dashboard';">
+                                    </div>
+                                    <!-- 2. Stock -->
+                                    <div id="phone-screen-stock" class="phone-screen absolute inset-0 transition-opacity duration-300 opacity-0 z-0">
+                                        <img src="stock management.png" alt="Stock Hub" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/340x520/0B3C5D/ffffff?text=Stock+Hub';">
+                                    </div>
+                                    <!-- 3. Records -->
+                                    <div id="phone-screen-records" class="phone-screen absolute inset-0 transition-opacity duration-300 opacity-0 z-0">
+                                        <img src="sale .png" alt="Day Records & POS" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/340x520/0B3C5D/ffffff?text=Day+Records+%26+POS';">
+                                    </div>
+                                    <!-- 4. Analytics -->
+                                    <div id="phone-screen-analytics" class="phone-screen absolute inset-0 transition-opacity duration-300 opacity-0 z-0">
+                                        <img src="esma.png" alt="Analytics & ESMA AI" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/340x520/0B3C5D/ffffff?text=Analytics+%26+ESMA+AI';">
+                                    </div>
+                                    <!-- 5. Settings -->
+                                    <div id="phone-screen-settings" class="phone-screen absolute inset-0 transition-opacity duration-300 opacity-0 z-0">
+                                        <img src="admin.png" alt="Settings & RBAC" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/340x520/0B3C5D/ffffff?text=Settings+%26+Permissions';">
+                                    </div>
+                                </div>
+
+                                <!-- EXACT APP BOTTOM NAVIGATION BAR (Home, Stock, Records, Analytics, Settings) -->
+                                <div class="bg-white border-t border-slate-200 py-2 px-1 flex justify-around items-center z-20 select-none shadow-md">
+                                    <button onclick="switchMobileNav('home')" id="app-nav-home" class="app-bottom-nav flex flex-col items-center gap-0.5 text-brand-blue font-bold flex-1">
+                                        <i data-lucide="home" class="w-5 h-5"></i>
+                                        <span class="text-[10px]">Home</span>
+                                    </button>
+                                    <button onclick="switchMobileNav('stock')" id="app-nav-stock" class="app-bottom-nav flex flex-col items-center gap-0.5 text-slate-400 font-medium hover:text-brand-blue flex-1">
+                                        <i data-lucide="box" class="w-5 h-5"></i>
+                                        <span class="text-[10px]">Stock</span>
+                                    </button>
+                                    <button onclick="switchMobileNav('records')" id="app-nav-records" class="app-bottom-nav flex flex-col items-center gap-0.5 text-slate-400 font-medium hover:text-brand-blue flex-1">
+                                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                                        <span class="text-[10px]">Records</span>
+                                    </button>
+                                    <button onclick="switchMobileNav('analytics')" id="app-nav-analytics" class="app-bottom-nav flex flex-col items-center gap-0.5 text-slate-400 font-medium hover:text-brand-blue flex-1">
+                                        <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+                                        <span class="text-[10px]">Analytics</span>
+                                    </button>
+                                    <button onclick="switchMobileNav('settings')" id="app-nav-settings" class="app-bottom-nav flex flex-col items-center gap-0.5 text-slate-400 font-medium hover:text-brand-blue flex-1">
+                                        <i data-lucide="settings" class="w-5 h-5"></i>
+                                        <span class="text-[10px]">Settings</span>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem vs Solution Section -->
+    <section id="problem-solution" class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-100 px-3 py-1 rounded-full">Field Research Findings</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-darkBlue mt-3">From Paper Notebooks to Digital Clarity</h2>
+                <p class="text-slate-600 text-base sm:text-lg mt-3">
+                    Team Horizon interviewed business owners across Kijitonyama, Sinza, Makumbusho, and Mwenge to map out real daily bottlenecks.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                <!-- The Problem Side -->
+                <div class="bg-red-50/60 rounded-3xl p-6 sm:p-8 border border-red-200/80 space-y-6">
+                    <div class="flex items-center gap-3 text-red-700">
+                        <div class="w-10 h-10 rounded-xl bg-red-200 flex items-center justify-center font-bold">
+                            <i data-lucide="alert-circle" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">The Manual Problem</h3>
+                            <p class="text-xs text-red-600">What SME owners face every evening</p>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4 text-slate-700 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x-circle" class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong>Slow & Error-Prone Bookkeeping:</strong> Manual calculations in physical ledgers lead to miscalculated daily profits and unrecorded expenses.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x-circle" class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong>High Risk of Data Loss:</strong> Water spills, fire, torn or lost notebooks cause years of financial history and debtor lists to disappear forever.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x-circle" class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong>Unmonitored Debts & Unplanned Stockouts:</strong> Business owners struggle to track who still owes them (Wadeni) or when stock runs dangerously low.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="x-circle" class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong>Lack of Staff Accountability:</strong> Employees alter sales records or cost prices without an audit trail for the shop manager.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- The Solution Side -->
+                <div class="bg-emerald-50/60 rounded-3xl p-6 sm:p-8 border border-emerald-200/80 space-y-6">
+                    <div class="flex items-center gap-3 text-emerald-800">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-200 flex items-center justify-center font-bold">
+                            <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">The Biashara Kiganjani Solution</h3>
+                            <p class="text-xs text-emerald-700">Validate • Compute • Decide</p>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4 text-slate-700 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong>Instant Transaction Validation:</strong> Autofills items and validates price input to eliminate mistyped amount errors during POS entry.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong>Automated Computation & Cloud Backups:</strong> Computes real-time profit, stock value, and debtor totals with 100% secure PostgreSQL cloud syncing.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong>ESMA AI Advisor (Gemini):</strong> Evaluates financial health scores and delivers actionable advice (restock warnings, debt reminders) in Swahili or English.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong>Role-Based Access Control (RBAC):</strong> Managers retain control over analytics, reports, and settings while cashiers only see POS entry.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section id="features" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-accent bg-emerald-100 px-3 py-1 rounded-full">Comprehensive Capabilities</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-darkBlue mt-3">Designed for Daily Shop Operations</h2>
+                <p class="text-slate-600 text-base sm:text-lg mt-3">
+                    Every feature in Biashara Kiganjani was built following hands-on field research with retail shops, printing centers, mobile money agents, hardware stores, and pharmacies across Dar es Salaam.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1: POS & Daily Sales -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center font-bold mb-4">
+                        <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-darkBlue mb-2">POS & Multi-Mode Sales</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Record daily Cash, Credit, or Mixed payment sales instantly. Prevent cashier entry errors with built-in price validation and automated item search.
+                    </p>
+                </div>
+
+                <!-- Feature 2: Stock Hub & Inventory -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold mb-4">
+                        <i data-lucide="boxes" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-darkBlue mb-2">Inventory & Restock Alerts</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Real-time quantity tracking, damaged goods logging, supplier purchase entry, automated low-stock warnings, and identification of poor-moving goods.
+                    </p>
+                </div>
+
+                <!-- Feature 3: Debt & Debtor Management -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold mb-4">
+                        <i data-lucide="book-open-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-darkBlue mb-2">Debt & Debtor Tracker</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Track customers who bought on credit (Wadeni) with expected payment return dates, phone numbers, and monitor debts owed to suppliers (Deni).
+                    </p>
+                </div>
+
+                <!-- Feature 4: Role-Based Access Control -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center font-bold mb-4">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-darkBlue mb-2">Manager vs Cashier RBAC</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Protect confidential financial records. Grant employees (Recorders) access only to POS screens while restricting Analytics and Settings to the Manager.
+                    </p>
+                </div>
+
+                <!-- Feature 5: Tax & Profit Calculator -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center font-bold mb-4">
+                        <i data-lucide="calculator" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-darkBlue mb-2">Tax & Profit Analytics</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Track business year terms, calculate Cost of Goods (Opening + Purchases - Closing Stock), gross profit, operational expenses, damages, and taxable profit.
+                    </p>
+                </div>
+
+                <!-- Feature 6: ESMA AI Advisor -->
+                <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold mb-4">
+                        <i data-lucide="sparkles" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-darkBlue mb-2">ESMA AI (Gemini Powered)</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        An integrated AI advisor that reads real JSON snapshots of your business database to provide health scores, answers in English or Kiswahili, and PDF reports.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE TAX CALCULATOR WIDGET -->
+    <section id="interactive-tax" class="py-20 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold uppercase tracking-wider text-teal-600 bg-teal-100 px-3 py-1 rounded-full">Interactive Utility</span>
+                <h2 class="text-3xl font-extrabold text-brand-darkBlue mt-3">Live Taxable Profit Calculator</h2>
+                <p class="text-slate-600 text-sm mt-2">
+                    Test how Biashara Kiganjani instantly computes Cost of Goods Sold and Taxable Net Profit.
+                </p>
+            </div>
+
+            <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+                <div class="grid sm:grid-cols-3 gap-4 text-xs">
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Opening Stock (TSh)</label>
+                        <input type="number" id="calc-opening" value="5900000" oninput="runLiveTaxCalc()" class="w-full p-2.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-brand-blue">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Purchases (TSh)</label>
+                        <input type="number" id="calc-purchases" value="300000" oninput="runLiveTaxCalc()" class="w-full p-2.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-brand-blue">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Closing Stock (TSh)</label>
+                        <input type="number" id="calc-closing" value="5900000" oninput="runLiveTaxCalc()" class="w-full p-2.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-brand-blue">
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-3 gap-4 text-xs">
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Total Sales Revenue (TSh)</label>
+                        <input type="number" id="calc-sales" value="1148000" oninput="runLiveTaxCalc()" class="w-full p-2.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-brand-blue">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Expenses (TSh)</label>
+                        <input type="number" id="calc-expenses" value="5000" oninput="runLiveTaxCalc()" class="w-full p-2.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-brand-blue">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Stock Damages (TSh)</label>
+                        <input type="number" id="calc-damages" value="350000" oninput="runLiveTaxCalc()" class="w-full p-2.5 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-brand-blue">
+                    </div>
+                </div>
+
+                <!-- Output Box -->
+                <div class="bg-slate-900 text-white p-5 rounded-2xl grid sm:grid-cols-3 gap-4 text-center">
+                    <div>
+                        <div class="text-[11px] text-slate-400">Cost of Goods Sold</div>
+                        <div id="res-cogs" class="text-lg font-bold text-cyan-300">TSh 300,000</div>
+                    </div>
+                    <div>
+                        <div class="text-[11px] text-slate-400">Gross Profit</div>
+                        <div id="res-gross" class="text-lg font-bold text-amber-300">TSh 848,000</div>
+                    </div>
+                    <div>
+                        <div class="text-[11px] text-slate-400">Taxable Net Profit</div>
+                        <div id="res-taxable" class="text-xl font-black text-emerald-400">TSh 493,000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM HORIZON & DEVELOPERS CREDITS SECTION -->
+    <section id="team-horizon" class="py-20 bg-brand-darkBlue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">The Minds Behind Biashara Kiganjani</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Team Horizon & Developer Credits</h2>
+                <p class="text-slate-300 text-base mt-2">
+                    Engineered during Practical Training (PT) at the University of Dar es Salaam ICT Innovation Hub (UDICTI - CoICT).
+                </p>
+            </div>
+
+            <!-- Team Horizon 6 Members Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                
+                <!-- Cyprian Stephen Ng'eve -->
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 space-y-3 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-brand-accent flex items-center justify-center font-bold text-white text-lg">
+                        CN
+                    </div>
+                    <div>
+                        <div class="text-xs text-emerald-400 font-semibold uppercase">Chief Executive Officer</div>
+                        <h3 class="text-lg font-bold text-white">Cyprian Stephen Ng'eve</h3>
+                        <p class="text-slate-400 text-xs">Lead System Developer & Author</p>
+                    </div>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Full-stack Flutter development, Supabase PostgreSQL schema, RLS policies, Deno Edge Functions & ESMA AI integration.
+                    </p>
+                </div>
+
+                <!-- Meshack Mwakalibwa -->
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center font-bold text-white text-lg">
+                        MM
+                    </div>
+                    <div>
+                        <div class="text-xs text-blue-400 font-semibold uppercase">Vice CEO</div>
+                        <h3 class="text-lg font-bold text-white">Meshack Mwakalibwa</h3>
+                        <p class="text-slate-400 text-xs">Strategy & Product Planning</p>
+                    </div>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Coordinated software development life cycle planning and product roadmap alignement for local SMEs.
+                    </p>
+                </div>
+
+                <!-- Anando Minja -->
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-600 flex items-center justify-center font-bold text-white text-lg">
+                        AM
+                    </div>
+                    <div>
+                        <div class="text-xs text-cyan-400 font-semibold uppercase">Chief Technical Officer</div>
+                        <h3 class="text-lg font-bold text-white">Anando Minja</h3>
+                        <p class="text-slate-400 text-xs">Technical Architecture & QA</p>
+                    </div>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Overseeing API integrations, database normalization, and edge function optimization.
+                    </p>
+                </div>
+
+                <!-- Lucy Nyakunga -->
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center font-bold text-white text-lg">
+                        LN
+                    </div>
+                    <div>
+                        <div class="text-xs text-purple-400 font-semibold uppercase">Chief Operational Officer</div>
+                        <h3 class="text-lg font-bold text-white">Lucy Nyakunga</h3>
+                        <p class="text-slate-400 text-xs">Operations & User Feedback</p>
+                    </div>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Managed user testing workflows, shop attendant onboarding feedback, and user experience refine.
+                    </p>
+                </div>
+
+                <!-- William Bituro -->
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500 flex items-center justify-center font-bold text-white text-lg">
+                        WB
+                    </div>
+                    <div>
+                        <div class="text-xs text-amber-400 font-semibold uppercase">Lead Business Researcher</div>
+                        <h3 class="text-lg font-bold text-white">William Bituro</h3>
+                        <p class="text-slate-400 text-xs">Field Interviews & Market Data</p>
+                    </div>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Executed field research across Dar es Salaam SMEs to extract core pain points and debt recording issues.
+                    </p>
+                </div>
+
+                <!-- Lucas Tarimo -->
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-teal-500 flex items-center justify-center font-bold text-white text-lg">
+                        LT
+                    </div>
+                    <div>
+                        <div class="text-xs text-teal-400 font-semibold uppercase">Lead Business Researcher</div>
+                        <h3 class="text-lg font-bold text-white">Lucas Tarimo</h3>
+                        <p class="text-slate-400 text-xs">Field Interviews & Requirement Validation</p>
+                    </div>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Assessed SME owner digital literacy requirements and validated prototype ease of use.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Institutional Mentorship & Tech Stack Footer Card -->
+            <div class="bg-slate-900/90 rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6">
+                <div class="grid md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <h4 class="text-base font-bold text-white">Mentorship & Strategic Support</h4>
+                        <p class="text-slate-400 text-xs mt-1 leading-relaxed">
+                            Special thanks to UDICTI Innovation Coordinator <strong>Dr. Moses Ismail</strong>, CoICT supervisors, and industry partners including <strong>Sahara Ventures, NMB Bank, and Selcom</strong> for continuous mentorship.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold justify-start md:justify-end">
+                        <span class="bg-slate-800 text-cyan-300 px-3 py-1.5 rounded-lg border border-slate-700">Flutter / Dart</span>
+                        <span class="bg-slate-800 text-emerald-300 px-3 py-1.5 rounded-lg border border-slate-700">Supabase DB</span>
+                        <span class="bg-slate-800 text-purple-300 px-3 py-1.5 rounded-lg border border-slate-700">Edge Functions</span>
+                        <span class="bg-slate-800 text-amber-300 px-3 py-1.5 rounded-lg border border-slate-700">Gemini AI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CTA Section -->
+    <section id="download" class="py-20 bg-gradient-to-br from-brand-blue to-brand-darkBlue text-white relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8">
+            <h2 class="text-3xl sm:text-5xl font-black tracking-tight">Ready to Digitise Your Shop Today?</h2>
+            <p class="text-slate-200 text-lg max-w-2xl mx-auto">
+                Download the Biashara Kiganjani APK directly to your Android device or scan the QR code to install.
+            </p>
+
+            <div class="flex flex-wrap justify-center items-center gap-4 pt-4">
+                <a href="javascript:void(0)" onclick="triggerAppDownload()" class="bg-brand-accent hover:bg-brand-accentHover text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-emerald-500/30 transition-all flex items-center gap-3">
+                    <i data-lucide="download" class="w-6 h-6"></i>
+                    Download APK (Android)
+                </a>
+                <button onclick="openQrModal()" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-xl font-bold text-lg border border-slate-600 transition-all flex items-center gap-3">
+                    <i data-lucide="qr-code" class="w-6 h-6 text-emerald-400"></i>
+                    Show QR Code
+                </button>
+            </div>
+
+            <div class="text-xs text-slate-400 font-medium pt-4">
+                Compatible with Android 7.0+ • Cloud synchronized • Multi-user ready
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded bg-brand-accent flex items-center justify-center text-white text-xs font-bold">BK</div>
+                <span class="font-bold text-white">Biashara Kiganjani</span>
+                <span class="text-slate-600">|</span>
+                <span>Team Horizon • UDICTI Project</span>
+            </div>
+            <div class="text-xs text-slate-500 text-center sm:text-right">
+                © 2026 Team Horizon & UDICTI (CoICT - University of Dar es Salaam). All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- QR CODE MODAL -->
+    <div id="qrModal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full text-slate-800 text-center shadow-2xl relative border border-slate-200">
+            <!-- Close Button -->
+            <button onclick="closeQrModal()" class="absolute right-4 top-4 text-slate-400 hover:text-slate-600">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="w-12 h-12 rounded-2xl bg-brand-lightBlue text-brand-blue mx-auto flex items-center justify-center font-bold mb-3">
+                <i data-lucide="qr-code" class="w-6 h-6 text-brand-blue"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-brand-darkBlue">Scan to Get the App</h3>
+            <p class="text-xs text-slate-500 mt-1 mb-6">Point your Android phone camera at the QR code to open download link directly.</p>
+
+            <!-- Generated QR Code Render Container -->
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex justify-center mb-6">
+                <img id="qrImage" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://biashara-kiganjani.udicti.ac.tz/download" alt="Biashara Kiganjani App Download QR Code" class="w-48 h-48 rounded-lg shadow-sm">
+            </div>
+
+            <div class="space-y-2">
+                <button onclick="triggerAppDownload()" class="w-full bg-brand-accent hover:bg-brand-accentHover text-white py-3 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="download" class="w-4 h-4"></i> Download Direct APK
+                </button>
+                <button onclick="closeQrModal()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-600 py-2.5 rounded-xl font-semibold text-xs">
+                    Close Window
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Switch Mobile App Bottom Navigation Screens
+        function switchMobileNav(targetNav) {
+            // Hide all screens
+            const screens = document.querySelectorAll('.phone-screen');
+            screens.forEach(sc => {
+                sc.classList.remove('opacity-100', 'z-10');
+                sc.classList.add('opacity-0', 'z-0');
+            });
+
+            // Deactivate all bottom nav buttons
+            const navBtns = document.querySelectorAll('.app-bottom-nav');
+            navBtns.forEach(btn => {
+                btn.classList.remove('text-brand-blue', 'font-bold');
+                btn.classList.add('text-slate-400', 'font-medium');
+            });
+
+            // Show selected screen
+            const activeScreen = document.getElementById(`phone-screen-${targetNav}`);
+            if (activeScreen) {
+                activeScreen.classList.remove('opacity-0', 'z-0');
+                activeScreen.classList.add('opacity-100', 'z-10');
+            }
+
+            // Highlight selected nav button
+            const activeNavBtn = document.getElementById(`app-nav-${targetNav}`);
+            if (activeNavBtn) {
+                activeNavBtn.classList.remove('text-slate-400', 'font-medium');
+                activeNavBtn.classList.add('text-brand-blue', 'font-bold');
+            }
+        }
+
+        // Live Tax Calculation Function
+        function runLiveTaxCalc() {
+            const opening = parseFloat(document.getElementById('calc-opening').value) || 0;
+            const purchases = parseFloat(document.getElementById('calc-purchases').value) || 0;
+            const closing = parseFloat(document.getElementById('calc-closing').value) || 0;
+            const sales = parseFloat(document.getElementById('calc-sales').value) || 0;
+            const expenses = parseFloat(document.getElementById('calc-expenses').value) || 0;
+            const damages = parseFloat(document.getElementById('calc-damages').value) || 0;
+
+            const cogs = (opening + purchases) - closing;
+            const gross = sales - cogs;
+            const taxable = gross - expenses - damages;
+
+            document.getElementById('res-cogs').innerText = `TSh ${cogs.toLocaleString()}`;
+            document.getElementById('res-gross').innerText = `TSh ${gross.toLocaleString()}`;
+            document.getElementById('res-taxable').innerText = `TSh ${taxable.toLocaleString()}`;
+        }
+
+        // QR Code Modal Functions
+        function openQrModal() {
+            document.getElementById('qrModal').classList.remove('hidden');
+        }
+
+        function closeQrModal() {
+            document.getElementById('qrModal').classList.add('hidden');
+        }
+
+        function triggerAppDownload() {
+            alert('Downloading Biashara Kiganjani APK v1.0.0...');
+        }
+    </script>
+</body>
+</html>
